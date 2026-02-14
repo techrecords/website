@@ -34,7 +34,7 @@ The audio player streams audio from a linux-based PC while been connected to the
 Short demo of the player: Start/stop commands (locally and over HA), volume adjustment, backlight turn on due to button press:
 <div class="entry-content alignfull wp-block-post-content has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained">
     <figure class="wp-block-video">
-        <video controls="" muted="" src="https://github.com/bespsm/techrecords-org/raw/refs/heads/main/_images/ha-sync-device-demo.mp4" playsinline=""></video>
+        <video controls="" muted="" src="https://github.com/techrecords/website/raw/refs/heads/main/_images/ha-sync-device-demo.mp4" playsinline=""></video>
     </figure>
 </div>
 
@@ -106,7 +106,7 @@ sudo systemctl restart icecast2
 ```
 esphome run ha-audio-sync-config.yaml
 ```
-YAML file is located [here](https://github.com/bespsm/ha-configs/blob/main/ha-audio-sync/ha-audio-sync-config.yaml)
+YAML file is located [here](https://github.com/techrecords/ha-configs/blob/main/ha-audio-sync/ha-audio-sync-config.yaml)
 
 **IMPORTANT: In the config file specify SSID, WI-FI password and URL for the audio source stream, which is defined in butt**
 

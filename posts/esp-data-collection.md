@@ -16,9 +16,9 @@ taxonomy:
 
 ## Links used in the project
 
-1. [Terraform provision configs](https://github.com/bespsm/esp-data-collection-tf)
-2. [Server configs & apps](https://github.com/bespsm/esp-data-collection-srv)
-3. [ESP32 flashware](https://github.com/bespsm/esp-data-collection-soc)
+1. [Terraform provision configs](https://github.com/techrecords/esp-data-collection-tf)
+2. [Server configs & apps](https://github.com/techrecords/esp-data-collection-srv)
+3. [ESP32 flashware](https://github.com/techrecords/esp-data-collection-soc)
 4. [Udemy. IoT Application Development with ESP32](https://www.udemy.com/course/iot-application-development-with-the-esp32-using-the-esp-idf/)
 5. [How to Set Up a Mosquitto MQTT Broker Securely](https://medium.com/gravio-edge-iot-platform/how-to-set-up-a-mosquitto-mqtt-broker-securely-using-client-certificates-82b2aaaef9c8)
 
@@ -35,7 +35,7 @@ Have you had a feeling after passing a training *"hm, that was good but I want t
 
 ## Visualization in ESP32 embedded web-server
 
-No issues were there. I extended original [IoT course's repository](https://github.com/kevinudemy/udemy_esp32) by adding **chart.js** library and sensor chart to embedded ESP32 web-server. My fork with extensions and detailed description is located [here](https://github.com/bespsm/esp-data-collection-soc).
+No issues were there. I extended original [IoT course's repository](https://github.com/kevinudemy/udemy_esp32) by adding **chart.js** library and sensor chart to embedded ESP32 web-server. My fork with extensions and detailed description is located [here](https://github.com/techrecords/esp-data-collection-soc).
 
 ![Visualization in ESP32 embedded web-server](/_images/esp-dc-local-visual.png "Visualization in ESP32 embedded web-server") {.wp-post-image}
 
@@ -49,7 +49,7 @@ At that moment I didn't really study Grafana and its data sources and naively th
 
 ## Revised Software Architecture: Attempt Two
 
-During the development I decided to simplify design by moving from lambdas and instead use a [python script](https://github.com/bespsm/esp-data-collection-srv/blob/main/script) for forwarding MQTT messages to DynamoDB and use DynamoDB data source in Grafana for fetching time series data. A part from that I replaced AWS IoT MQTT Broker by Eclipse Mosquitto MQTT Broker which I installed on the same EC2 instance where Grafana was. Route53 is used to have a static hostname for ESP32.
+During the development I decided to simplify design by moving from lambdas and instead use a [python script](https://github.com/techrecords/esp-data-collection-srv/blob/main/script) for forwarding MQTT messages to DynamoDB and use DynamoDB data source in Grafana for fetching time series data. A part from that I replaced AWS IoT MQTT Broker by Eclipse Mosquitto MQTT Broker which I installed on the same EC2 instance where Grafana was. Route53 is used to have a static hostname for ESP32.
 
 ![Visualization on AWS. Version two](/_images/esp-dc-design-v2.0.png "Architecture of AWS-based Visualization. Version 2.0") {.wp-post-image}
 
@@ -65,7 +65,7 @@ Only at that point I started to study Grafana and its data sources. It seemed th
 
 ![Grafana Dashboard look](/_images/esp-dc-grafana-dash.png "Grafana Dashboard") {.wp-post-image}
 
-Here are the links to the final architecture: [Terraform config](https://github.com/bespsm/esp-data-collection-tf/tree/main/prometheus-grafana), [SoC flashware](https://github.com/bespsm/esp-data-collection-SoC) and [Grafana config](https://github.com/bespsm/esp-data-collection-srv/tree/main/grafana_cfg) (is deployed by Terraform). *The final solution is not focused on security aspects. This one is left on the used user.*
+Here are the links to the final architecture: [Terraform config](https://github.com/techrecords/esp-data-collection-tf/tree/main/prometheus-grafana), [SoC flashware](https://github.com/techrecords/esp-data-collection-SoC) and [Grafana config](https://github.com/bespsm/esp-data-collection-srv/tree/main/grafana_cfg) (is deployed by Terraform). *The final solution is not focused on security aspects. This one is left on the used user.*
 
 ## Lessons Learnt
 
@@ -77,14 +77,14 @@ After going over 3 architecture iterations, I summarize the outcome in 2 points:
 
 __Flash ESP32__
 * assemble ESP32 with a DHT22 sensor, according to wiring diagram
-* clone [the course's repo with my extenstions](https://github.com/bespsm/esp-data-collection-soc)
+* clone [the course's repo with my extenstions](https://github.com/techrecords/esp-data-collection-soc)
 * read the READE.md and adapt the code to your needs
 * build and flash to your hardware
 
 __AWS deployment of server side__
-* clone [Terraform configs repo](https://github.com/bespsm/esp-data-collection-tf)
+* clone [Terraform configs repo](https://github.com/techrecords/esp-data-collection-tf)
 * read the READE.md
-* adapt [techrecords_grafana.tfvars](https://github.com/bespsm/esp-data-collection-tf/blob/main/prometheus-grafana/techrecords_grafana.tfvars) to your needs
+* adapt [techrecords_grafana.tfvars](https://github.com/techrecords/esp-data-collection-tf/blob/main/prometheus-grafana/techrecords_grafana.tfvars) to your needs
 ```
 cd esp-data-collection-tf/prometheus-grafana/
 terraform apply  -var-file=techrecords_grafana.tfvars
@@ -94,7 +94,7 @@ Grafana should be accessible over the port 3000 and EC2 IP (or your subdomain na
 __Local deployment of server side__ (tested on Ubuntu 22.04)
 * invoke following commands:
 ```
-git clone https://github.com/bespsm/esp-data-collection-srv.git
+git clone https://github.com/techrecords/esp-data-collection-srv.git
 cd esp-data-collection-srv
 docker compose up -d
 ```
