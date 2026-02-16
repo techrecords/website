@@ -1,5 +1,7 @@
 ---
 title: Architectural Evolution. Lessons from Merging AWS and ESP32 Development
+featured_image: _images/esp-touch-lcd128-vibecoding-demo.gif
+post_date: 2024-11-05 12:00:00
 taxonomy:
     category: Projects
     post_tag:
