@@ -1,8 +1,8 @@
 ---
 title:  Lightweight video looper for headless Raspberry Pi 
 featured_image: _images/pi-video-looper/looper-sequence-light.gif
-post_date: 2026-02-16 01:01:59
-post_excerpt: Last week I was experimenting with copilot agent GPT-4.1 (released 2025.04.14)...
+post_date: 2026-04-05 21:16:00
+post_excerpt: This project is intended for those who want to loop a video on the HDMI display...
 comment_status: closed
 taxonomy:
     category: Projects
