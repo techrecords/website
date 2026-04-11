@@ -2,7 +2,7 @@
 title: ESP32-based project, streams live I2S-microphone data over WiFi Access Point
 featured_image: _images/ap-audio-streamer/webserer-page-small.png
 post_date: 2026-05-11 12:00:00
-post_excerpt: This project
+post_excerpt: his project might be a good start if you want a device that streams...
 comment_status: closed
 taxonomy:
     category: Projects
