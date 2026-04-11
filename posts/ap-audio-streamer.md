@@ -14,9 +14,7 @@ taxonomy:
         - vibecoding
 ---
 
-## Description
-
-This project might be a good start if you want a device that streams audio data to many listeners — for example, audio streaming for excursions, guided tours, etc.
+This project might be a good starting point if you want a device that streams audio data to many listeners — for example, audio streaming for excursions, guided tours, etc.
 
 I had a few iterations with this project. The first iteration started in 2024; I was experimenting with Raspberry Pi and gstreamer at that time. I couldn't beat the high latency of web streaming — obviously the issue was that httpd wasn't configured to use websockets. I abandoned this idea afterwards. Back in 2026, after switching to ESP32, I was able (with AI help) to reach a desirable result. It supports 10 simultaneous connections. [HERE](https://github.com/techrecords/ap-audio-streamer) you can find the repo with the project and all HOWTOs in [README.md](https://github.com/techrecords/ap-audio-streamer/blob/main/README.md).
 
